@@ -1,0 +1,14 @@
+{
+  "name": "curtisshoward-com-postprocessor",
+  "version": "1.0.0",
+  "description": "Postprocessor for curtisshoward.com",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handcraftedbits/site-curtisshoward.com"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0"
+  }
+}

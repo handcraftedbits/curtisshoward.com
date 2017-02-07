@@ -1,0 +1,21 @@
+baseUrl: "https://curtisshoward.com/"
+disableRSS: true
+enableRobotsTXT: true
+languageCode: "en-us"
+metaDataFormat: "yaml"
+paginate: 10
+pygmentsStyle: "monokai-hcb"
+pygmentsUseClasses: true
+pygmentsCodeFences: true
+
+permalinks:
+  toplevel: "/:filename/"
+
+taxonomies:
+  tag: "tags"
+
+params:
+  owner:
+    github: "handcraftedbits"
+    linkedin: "https://linkedin.com/in/curtisshoward"
+    name: "Curtiss Howard"
