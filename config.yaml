@@ -1,4 +1,5 @@
 baseUrl: "https://curtisshoward.com/"
+disableHugoGeneratorInject: true
 disableRSS: true
 enableRobotsTXT: true
 languageCode: "en-us"
