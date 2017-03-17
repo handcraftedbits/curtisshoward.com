@@ -5,10 +5,11 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/handcraftedbits/site-curtisshoward.com"
+    "url": "https://github.com/handcraftedbits/curtisshoward.com.git"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-htmlmin": "^3.0.0"
+    "gulp-htmlmin": "^3.0.0",
+    "http-server": "^0.9.0"
   }
 }
