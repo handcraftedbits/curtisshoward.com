@@ -1,6 +1,6 @@
 ---
 date: 2017-01-30T15:44:10-05:00
-tags: [ amd, esxi, virtualization, windows]
+tags: [ amd, esxi, virtualization, windows ]
 title: AMD GPU Passthrough Reset Issues in Windows -- Solved!
 ---
 
