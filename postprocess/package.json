@@ -11,5 +11,11 @@
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^3.0.0",
     "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "simple-headless-chrome": "^4.3.10"
+  },
+  "scripts": {
+    "export-pdf": "node index.js"
   }
 }
