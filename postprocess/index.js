@@ -1,6 +1,6 @@
 const chrome = require("simple-headless-chrome");
 
-const browser = new chrome({ headless: true });
+const browser = new chrome({ headless: true, chrome: { noSandbox: true } });
 
 async function exportPDF (url, filename) {
      try {
