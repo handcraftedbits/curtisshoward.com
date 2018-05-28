@@ -8,6 +8,7 @@ paginate: 10
 pygmentsStyle: "monokai-hcb"
 pygmentsUseClasses: true
 pygmentsCodeFences: true
+uglyurls: true
 
 permalinks:
   toplevel: "/:filename/"
