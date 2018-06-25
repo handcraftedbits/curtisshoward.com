@@ -4,7 +4,7 @@
     "label": "Software Engineer",
     "name": "Curtiss Howard",
     "phone": "(919) 386-9702",
-    "picture": "logo",
+    "picture": "/image/logo.svg",
     "summary": "Highly driven and accomplished software engineer with over ten years experience in Java EE technology and middleware development and over two years experience in mobile technology.  Seeking a challenging and rewarding software engineering role.  Recognized as a valuable technical asset with strong problem-solving and communication skills.  Issued eight software patents with others pending.",
     "website": "https://curtisshoward.com",
     "_websitePrettyLink": "curtisshoward.com",
@@ -22,14 +22,14 @@
         "network": "LinkedIn",
         "url": "https://www.linkedin.com/in/curtisshoward",
         "username": "curtisshoward",
-        "_icon": "linkedin-icon",
+        "_icon": "/image/linkedin-icon.svg",
         "_prettyLink": "www.linkedin.com/in/curtisshoward"
       },
       {
         "network": "GitHub",
         "url": "https://github.com/handcraftedbits",
         "username": "handcraftedbits",
-        "_icon": "github-icon",
+        "_icon": "/image/github-icon.svg",
         "_prettyLink": "github.com/handcraftedbits"
       }
     ]
