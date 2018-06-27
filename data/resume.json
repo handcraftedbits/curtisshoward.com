@@ -5,7 +5,7 @@
     "name": "Curtiss Howard",
     "phone": "(919) 386-9702",
     "picture": "/image/logo.svg",
-    "summary": "Highly driven and accomplished software engineer with over ten years experience in Java EE technology and middleware development and over two years experience in mobile technology.  Seeking a challenging and rewarding software engineering role.  Recognized as a valuable technical asset with strong problem-solving and communication skills.  Issued eight software patents with others pending.",
+    "summary": "Highly driven and accomplished software engineer with over ten years experience in Java EE technology and middleware development and over two years experience in mobile technology.  Seeking a challenging and rewarding software engineering role.  Recognized as a valuable technical asset with strong problem-solving and communication skills.",
     "website": "https://curtisshoward.com",
     "_websitePrettyLink": "curtisshoward.com",
 
@@ -197,73 +197,9 @@
     }
   ],
 
-  "_patents": [
-    {
-      "authors": "Burckart et al.",
-      "country": "US",
-      "issuedDate": "2010.04.13",
-      "name": "Selectively delivering cached content or processed content to clients based upon a result completed percentage",
-      "number": "7,698,411",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=7698411.PN.&OS=PN/7698411&RS=PN/7698411"
-    },
-    {
-      "authors": "Chetuparambil et al.",
-      "country": "US",
-      "issuedDate": "2011.10.04",
-      "name": "Method and apparatus for client-side aggregation of asynchronous fragmented requests",
-      "number": "8,032,587",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8032587.PN.&OS=PN/8032587&RS=PN/8032587"
-    },
-    {
-      "authors": "Howard et al.",
-      "country": "US",
-      "issuedDate": "2012.03.20",
-      "name": "Client identification and authorization in an asynchronous request dispatching environment",
-      "number": "8,140,842",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8140842.PN.&OS=PN/8140842&RS=PN/8140842"
-    },
-    {
-      "authors": "Concini et al.",
-      "country": "US",
-      "issuedDate": "2012.10.23",
-      "name": "Programmatically determining an execution mode for a request dispatch utilizing historic metrics",
-      "number": "8,296,411",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8296411.PN.&OS=PN/8296411&RS=PN/8296411"
-    },
-    {
-      "authors": "Howard et al.",
-      "country": "US",
-      "issuedDate": "2012.12.11",
-      "name": "Lightweight RRD extension framework",
-      "number": "8,332,467",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=8332467.PN.&OS=PN/8332467&RS=PN/8332467",
-      "_break": true
-    },
-    {
-      "authors": "Howard et al.",
-      "country": "US",
-      "issuedDate": "2015.06.30",
-      "name": "Client-side aggregation of context-sensitive request results where results for aggregation are asynchronously produced by multiple servers",
-      "number": "9,069,870",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=9069870.PN.&OS=PN/9069870&RS=PN/9069870"
-    },
-    {
-      "authors": "Howard et al.",
-      "country": "US",
-      "issuedDate": "2016.04.19",
-      "name": "State scope data file sharing",
-      "number": "9,317,520",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=9317520.PN.&OS=PN/9317520&RS=PN/9317520"
-    },
-    {
-      "authors": "Burckart et al.",
-      "country": "US",
-      "issuedDate": "2016.12.06",
-      "name": "Multi-source electronic forms with concealed fields",
-      "number": "9,514,237",
-      "url": "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=9514237.PN.&OS=PN/9514237&RS=PN/9514237"
-    }
-  ],
+  "_patents": {
+    "summary": "Granted eleven United Statets software patents with others pending.  For a complete list, visit <a href=\"https://curtisshoward.com/patents.html\">https://curtisshoward.com/patents.html</a>."
+  },
 
   "references": [
     {
