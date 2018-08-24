@@ -84,3 +84,11 @@ synchronization of common information between different applications without req
 **Authors**: Freed et al.\
 **Date Filed**: 2014.12.04\
 **Date Granted**: 2018.05.29
+
+# [US Patent 10,044,799](http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PTXT&s1=10044799.PN.&OS=PN/10044799&RS=PN/10044799)
+
+**Title**: Implementing synchronization of state information between instances of an application as well as between
+different applications in an efficient, scalable manner\
+**Authors**: Howard et al.\
+**Date Filed**: 2013.05.28\
+**Date Granted**: 2018.08.07
