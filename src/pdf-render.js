@@ -19,7 +19,7 @@ async function saveToPDF (url, filename) {
           // https://github.com/GoogleChrome/puppeteer/blod/master/docs/troubleshooting.md#running-on-alpine.
 
           const browser = await puppeteer.launch({
-               args: [ "--disable-dev-shm-usage" ],
+               args: [ "--disable-dev-shm-usage", "--no-sandbox" ],
                executablePath: "/usr/bin/chromium-browser",
                headless: true
           });
