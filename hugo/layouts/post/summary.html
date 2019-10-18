@@ -1,0 +1,9 @@
+{{ partial "header.post.html" . }}
+  <p>
+    {{/* Have to do this because Hugo inserts <p> and </p> "sometimes" in a summary, and we want to be consistent. */}}
+    {{ replace (replace .Summary "<p>" "") "</p>" "" | safeHTML }}
+  </p>
+  <p>
+    <a class="read-more" href="{{ .Permalink }}">Read more...</a>
+  </p>
+{{ partial "footer.post.html" (dict "page" . "isListing" true) }}

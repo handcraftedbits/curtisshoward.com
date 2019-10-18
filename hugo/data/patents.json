@@ -1,0 +1,86 @@
+[
+  {
+    "authors": "Burckart et al.",
+    "filed": "2007.08.24",
+    "granted": "2010.04.13",
+    "number": "7,698,411",
+    "title": "Selectively delivering cached content or processed content to clients based upon a result completed percentage"
+  },
+  {
+    "authors": "Chetuparambil et al.",
+    "filed": "2007.08.28",
+    "granted": "2011.10.04",
+    "number": "8,032,587",
+    "title": "Method and apparatus for client-side aggregation of asynchronous fragmented requests"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2008.05.29",
+    "granted": "2012.03.20",
+    "number": "8,140,842",
+    "title": "Client identification and authorization in an asynchronous request dispatching environment"
+  },
+  {
+    "authors": "Concini et al.",
+    "filed": "2010.03.01",
+    "granted": "2012.10.23",
+    "number": "8,296,411",
+    "title": "Programmatically determining an execution mode for a request dispatch utilizing historic metrics"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2009.07.29",
+    "granted": "2012.12.11",
+    "number": "8,332,467",
+    "title": "Lightweight RRD extension framework"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2007.08.22",
+    "granted": "2015.06.30",
+    "number": "9,069,870",
+    "title": "Client-side aggregation of context-sensitive request results where results for aggregation are asynchronously produced by multiple servers"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2013.07.30",
+    "granted": "2016.04.19",
+    "number": "9,317,520",
+    "title": "State scope data file sharing"
+  },
+  {
+    "authors": "Burckart et al.",
+    "filed": "2012.03.09",
+    "granted": "2016.12.06",
+    "number": "9,514,237",
+    "title": "Multi-source electronic forms with concealed fields"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2014.04.01",
+    "granted": "2017.04.25",
+    "number": "9,632,614",
+    "title": "Expanding touch zones of graphical user interface widgets displayed on a screen of a device without programming changes"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2013.05.28",
+    "granted": "2017.12.26",
+    "number": "9,854,035",
+    "title": "Maintaining state synchronization of an application between computing devices as well as maintaining state synchronization of common information between different applications without requiring periodic synchronization"
+  },
+  {
+    "authors": "Freed et al.",
+    "filed": "2014.12.04",
+    "granted": "2018.05.29",
+    "number": "9,984,105",
+    "title": "Automatic discovery of code and data stores that populate a user interface element"
+  },
+  {
+    "authors": "Howard et al.",
+    "filed": "2013.05.28",
+    "granted": "2018.08.07",
+    "number": "10,044,799",
+    "title": "Implementing synchronization of state information between instances of an application as well as between different applications in an efficient, scalable manner"
+  }
+]

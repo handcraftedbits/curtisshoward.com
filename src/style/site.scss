@@ -1,0 +1,696 @@
+@import "color";
+@import "font";
+@import "query";
+@import "size";
+
+/*
+ * Mixins
+ */
+
+@mixin size($property, $amount) {
+     @media #{$query-phone} {
+          #{$property}: $amount;
+     }
+
+     @media #{$query-tablet} {
+          #{$property}: $amount * $size-multiplier-tablet;
+     }
+
+     @media #{$query-desktop} {
+          #{$property}: $amount * $size-multiplier-desktop;
+     }
+}
+
+@mixin size-non-desktop($property, $amount) {
+     @media #{$query-phone} {
+          #{$property}: $amount;
+     }
+
+     @media #{$query-tablet} {
+          #{$property}: $amount * $size-multiplier-tablet;
+     }
+}
+
+@mixin unselectable() {
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -webkit-user-select: none;
+     user-select: none;
+}
+
+/*
+ * Media queries
+ */
+
+// IE11 hack.  We're taking advantage of IE having to use svg4everybody -- this means that SVGs are pulled in directly
+// (instead of hidden behind a shadow DOM), and thus we can style the SVGs directly and not have to use variables.
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     #links svg {
+          fill: $color-darkgray;
+     }
+
+     #logo-and-name svg {
+          fill: $color-base;
+     }
+
+     #social svg:hover {
+          fill: $color-base;
+     }
+}
+
+/*
+ * Elements
+ */
+
+a {
+     color: $color-base;
+     font-weight: bold;
+     text-decoration: none;
+
+     &.read-more {
+          @include unselectable();
+     }
+
+     &:hover {
+          text-decoration: underline;
+     }
+}
+
+article {
+     display: flex;
+     flex-direction: column;
+
+     @include size(padding, $size-padding-default);
+
+     &:not(:last-child) {
+          @include size(padding-bottom, $size-padding-default * 2.5);
+     }
+
+     & > header {
+          $size-title: $size-base * 2;
+          $size-date: $size-base;
+          $size-date-margin: $size-title / 4;
+          $size-date-min-width: $size-title * 3;
+          $size-title-margin: $size-date-margin / 2;
+
+          align-items: flex-end;
+          border-bottom: 2px solid $color-base;
+          color: $color-base;
+          display: flex;
+          flex-direction: row;
+
+          & > h1 {
+               flex-grow: 1;
+               font-weight: bold;
+               margin-top: 0;
+
+               @include size(font-size, $size-title);
+               @include size(margin-bottom, $size-title-margin);
+
+               & > a:hover {
+                    text-decoration: none;
+               }
+          }
+
+          & > h2 {
+               cursor: default;
+               font-weight: normal;
+               text-align: right;
+
+               @include size(font-size, $size-date);
+               @include size(margin-bottom, $size-date-margin);
+               @include size(min-width, $size-date-min-width);
+               @include unselectable();
+          }
+     }
+}
+
+blockquote {
+     $size-margin: $size-base * 0.75;
+
+     background-color: $color-background;
+
+     @include size(border-radius, $size-border);
+     @include size(margin, $size-margin);
+     @include size(padding, $size-margin);
+
+     & > p {
+          margin: 0;
+     }
+}
+
+body {
+     background-color: $color-text-inv;
+     font-family: "Bariol";
+
+     & > header {
+          align-items: center;
+          background-color: $color-background;
+          display: flex;
+          flex-direction: row;
+          flex-grow: 1;
+          justify-content: flex-end;
+          text-transform: lowercase;
+
+          @media #{$query-phone} {
+               padding: $size-padding-default;
+          }
+
+          @media #{$query-tablet} {
+               padding: $size-padding-default * $size-multiplier-tablet;
+          }
+
+          @media #{$query-desktop} {
+               bottom: 0;
+               position: fixed;
+               top: 0;
+          }
+     }
+}
+
+code {
+     font-family: "SourceCodePro";
+}
+
+div {
+     &.image {
+          text-align: center;
+     }
+}
+
+figure {
+     $size-padding: $size-base/ 2;
+
+     background-color: $color-background;
+     display: inline-block;
+     margin: 0;
+
+     @include size(border-radius, $size-border);
+     @include size(padding, $size-padding);
+
+     & > figcaption {
+          display: block;
+          font-style: italic;
+          font-weight: normal;
+
+          @include size(padding-top, $size-padding);
+     }
+}
+
+li {
+     font-family: "BariolSerif";
+}
+
+li > code, p > code {
+     $size-padding: $size-text / 5;
+     $size-text-code: $size-text * 0.8;
+
+     background-color: $color-background;
+
+     @include size(border-radius, $size-border);
+     @include size(font-size, $size-text-code);
+     @include size(padding-left, $size-padding);
+     @include size(padding-right, $size-padding);
+}
+
+main {
+     &#notfound {
+          $size-logo: $size-base * 9;
+          $size-text: $size-logo * (4/3);
+
+          align-items: center;
+          bottom: 0;
+          color: $color-base;
+          display: flex;
+          font-weight: bold;
+          justify-content: center;
+          left: 0;
+          margin: auto;
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          & > a {
+               display: flex;
+               flex-direction: column;
+               text-decoration: none;
+
+               @include unselectable();
+
+               & > p {
+                    font-family: "Bariol";
+               }
+
+               & > p:first-child {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0;
+
+                    @include size(font-size, $size-text);
+                    @include size(height, $size-logo);
+               }
+
+               & > p:last-child {
+                    margin-top: 0;
+                    text-align: end;
+                    text-transform: lowercase;
+
+                    @include size(font-size, $size-text / 4);
+                    @include size(padding-right, $size-text / 25);
+               }
+          }
+     }
+
+     @media #{$query-desktop} {
+          margin-left: 20%;
+     }
+}
+
+nav {
+     &#main {
+          $size-padding: $size-base / 4;
+
+          & > a {
+               $size-link: $size-base;
+
+               @include size(font-size, $size-link);
+               @include unselectable();
+
+               &:last-child::after {
+                    content: "";
+                    padding-left: 0;
+               }
+
+               &::after {
+                    color: $color-darkgray;
+                    content: "|";
+                    display: inline-block;
+
+                    @include size-non-desktop(padding-left, $size-padding);
+
+                    @media #{$query-desktop} {
+                         content: "";
+                    }
+               }
+          }
+
+          @media #{$query-desktop} {
+               display: flex;
+               flex-direction: column;
+               text-align: center;
+          }
+     }
+
+     &#posts {
+          text-align: center;
+
+          @include size(padding, $size-padding-default);
+          @include size(padding-top, 0);
+          @include unselectable();
+
+          & > ul {
+               cursor: default;
+               list-style-type: none;
+               margin-bottom: 0;
+               margin-left: 0;
+
+               & > li {
+                    $size-padding: $size-padding-default / 3;
+                    $size-width: $size-base * 1.25;
+
+                    display: inline-block;
+                    text-align: center;
+
+                    @include size(padding-bottom, $size-padding);
+                    @include size(padding-top, $size-padding);
+                    @include size(width, $size-width);
+
+                    &:hover {
+                         background-color: $color-background;
+
+                         & > a:hover {
+                              text-decoration: none;
+                         }
+                    }
+
+                    &.active, &.active:hover {
+                         background-color: $color-base;
+
+                         & > span {
+                              color: $color-text-inv;
+                         }
+                    }
+
+                    &.skip:hover {
+                         background-color: $color-text-inv;
+                    }
+
+                    & > a {
+                         display: block;
+                         width: 100%;
+                    }
+
+                    & span {
+                         @include size(font-size, $size-base);
+                    }
+
+               }
+          }
+     }
+
+     &#social {
+          $size-icon: $size-base * 1.5;
+          $size-padding-bottom: $size-base / 4;
+          $size-padding-right: $size-icon / 3;
+
+          display: flex;
+          flex-direction: row;
+          padding-top: 0;
+
+          @include size-non-desktop(padding-bottom, $size-padding-bottom);
+
+          & > a {
+               display: block;
+
+               @include size(padding-right, $size-padding-right);
+
+               &:hover > svg {
+                    --icon-fg: #{$color-base};
+               }
+
+               &.fullsize {
+                    @include size(margin-top, $size-base * -0.1);
+
+                    & > svg {
+                         // Kind of a hack to make the other icons look roughly the same size as the email icon.
+
+                         @include size(height, $size-icon);
+                         @include size(width, $size-icon);
+                    }
+               }
+
+               & > svg {
+                    --icon-fg: #{$color-darkgray};
+
+                    @include size(height, $size-icon * 0.9);
+                    @include size(width, $size-icon * 0.9);
+               }
+
+               @media #{$query-desktop} {
+                    display: inline-block;
+                    padding-right: $size-padding-right * $size-multiplier-desktop;
+               }
+          }
+
+          & > a:last-child {
+               padding-right: 0;
+          }
+
+          @media #{$query-desktop} {
+               padding-bottom: $size-icon * $size-multiplier-desktop;
+          }
+     }
+}
+
+ol, ul {
+     padding-left: 0;
+
+     @media #{$query-phone} {
+          margin-left: $size-base + 1rem;
+     }
+
+     @media #{$query-tablet} {
+          margin-left: ($size-base * $size-multiplier-tablet) + 1rem;
+     }
+
+     @media #{$query-desktop} {
+          margin-left: ($size-base * $size-multiplier-desktop) + 1rem;
+     }
+}
+
+p {
+     font-family: "BariolSerif";
+
+     @include size(margin-bottom, $size-base);
+     @include size(margin-top, $size-base);
+}
+
+pre {
+     background-color: $color-code;
+     color: white;
+     font-family: "SourceCodePro";
+     margin: 0;
+
+     @include size(border-radius, $size-border);
+     @include size(font-size, $size-text * 0.83);
+     @include size(padding, $size-base / 2);
+
+     & > code {
+          @include size(font-size, $size-base * 0.75);
+     }
+}
+
+section {
+     &#links {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+     }
+
+     &#logo-and-name {
+          display: flex;
+          flex-grow: 1;
+
+          & > h1 {
+               $size-name: $size-base * 1.5;
+               $size-margin: $size-name / 6;
+               $size-padding: $size-base / 2;
+
+               color: $color-base;
+               font-weight: bold;
+               margin-bottom: 0;
+               white-space: nowrap;
+
+               @include size(font-size, $size-name);
+               @include size-non-desktop(margin-top, $size-margin);
+               @include size-non-desktop(padding-left, $size-padding);
+               @include unselectable();
+
+               @media #{$query-desktop} {
+                    flex-grow: 0;
+                    margin-top: 0;
+                    padding-left: 0;
+                    padding-top: $size-base * 0.3;
+               }
+
+               @media #{$query-phone-portrait} {
+                    display: none;
+               }
+          }
+
+          & > a {
+               & > svg {
+                    $size-logo: $size-base * 2.5;
+                    $size-logo-margin: -($size-logo / 25);
+
+                    --icon-fg: #{$color-base};
+                    display: inline-block;
+
+                    @include size-non-desktop(height, $size-logo);
+                    @include size-non-desktop(margin-bottom, $size-logo-margin);
+                    @include size-non-desktop(width, $size-logo);
+
+                    @media #{$query-desktop} {
+                         height: $size-logo * 2.5 * $size-multiplier-desktop;
+                         width: $size-logo * 2.5 * $size-multiplier-desktop;
+                    }
+               }
+
+               @media #{$query-desktop} {
+                    margin-top: $size-base * 8;
+               }
+          }
+
+          @media #{$query-phone}, #{$query-tablet} {
+               flex-direction: row;
+          }
+
+          @media #{$query-desktop} {
+               align-items: center;
+               flex-direction: column;
+          }
+     }
+
+     &#prev-next {
+          $size-margin-top: ($size-base * 5) / 3;
+
+          display: flex;
+
+          @include size(font-size, $size-text);
+          @include size(margin-top, $size-margin-top);
+          @include unselectable();
+
+          & > a {
+               display: inline-block;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+
+               &.next {
+                    align-self: flex-end;
+                    margin-left: auto;
+
+                    @include size(padding-left, $size-padding-default);
+               }
+
+               &.prev {
+                    align-self: flex-start;
+               }
+          }
+
+          & > span {
+               color: $color-text;
+               font-weight: bold;
+          }
+     }
+
+     &.body {
+          $h1-size: 1.75rem;
+          $h2-size: $h1-size * 0.90;
+          $h3-size: $h2-size * 0.90;
+          $h4-size: $h3-size * 0.90;
+          $h5-size: $h4-size * 0.90;
+          $h6-size: $h5-size * 0.90;
+
+          @include size(font-size, $size-text);
+          @include size(margin-bottom, $size-base);
+
+          & > h1, h2, h3, h4, h5, h6 {
+               color: $color-base;
+
+               @include size(margin-bottom, $size-base);
+               @include size(margin-top, $size-base);
+          }
+
+          & > h1 {
+               @include size(font-size, $h1-size);
+          }
+
+          & > h2 {
+               @include size(font-size, $h2-size);
+          }
+
+          & > h3 {
+               @include size(font-size, $h3-size);
+          }
+
+          & > h4 {
+               @include size(font-size, $h4-size);
+          }
+
+          & > h5 {
+               @include size(font-size, $h5-size);
+          }
+
+          & > h6 {
+               @include size(font-size, $h6-size);
+          }
+
+          & > *:last-child {
+               margin-bottom: 0;
+          }
+
+          & + section.summary {
+               margin-top: 0 !important;
+          }
+
+          & + section.tags {
+               @include size(margin-top, $size-base);
+          }
+     }
+
+     &.tags {
+          cursor: default;
+          text-align: right;
+
+          @include unselectable();
+
+          & > a {
+               $size-tag: $size-base * 1.1;
+               $size-border: $size-tag / 4;
+               $size-margin: $size-tag / 5;
+               $size-padding: $size-tag / 4;
+               $size-padding-bottom: $size-tag / 5;
+               $size-padding-right: $size-tag / 3;
+               $size-padding-top: $size-tag / 7.2;
+
+               background-color: $color-base;
+               color: $color-text-inv;
+               font-weight: normal;
+               text-transform: lowercase;
+               white-space: nowrap;
+
+               @include size(border-radius, $size-border);
+               @include size(font-size, $size-base / 1.2);
+               @include size(margin-right, $size-margin);
+
+               &:hover {
+                    text-decoration: none;
+               }
+
+               &:last-child {
+                    margin-right: 0;
+               }
+
+               &::before {
+                    content: "\2022\00A0";
+               }
+
+               @media #{$query-phone} {
+                    padding: $size-padding-top $size-padding-right $size-padding-bottom $size-padding;
+               }
+
+               @media #{$query-tablet} {
+                    padding: ($size-padding-top * $size-multiplier-tablet) ($size-padding-right * $size-multiplier-tablet) ($size-padding-bottom * $size-multiplier-tablet) ($size-padding * $size-multiplier-tablet);
+               }
+
+               @media #{$query-desktop} {
+                    padding: ($size-padding-top * $size-multiplier-desktop) ($size-padding-right * $size-multiplier-desktop) ($size-padding-bottom * $size-multiplier-desktop) ($size-padding * $size-multiplier-desktop);
+               }
+          }
+     }
+}
+
+table {
+     $size-margin: $size-base * 1.5;
+
+     border-collapse: collapse;
+
+     @include size(margin-left, $size-margin / 2);
+
+     & td, th {
+          border: 1px solid $color-border-table;
+
+          @include size(padding, $size-base * 0.7);
+     }
+
+     & tr:nth-child(2n) {
+          background-color: $color-background;
+     }
+
+     /* Hack used to inset a 100% width table. */
+
+     @media #{$query-phone} {
+          width: calc(#{"100% - #{$size-margin}"});
+     }
+
+     @media #{$query-tablet} {
+          width: calc(#{"100% - (#{$size-margin} * #{$size-multiplier-tablet})"});
+     }
+
+     @media #{$query-desktop} {
+          width: calc(#{"100% - (#{$size-margin} * #{$size-multiplier-desktop})"});
+     }
+}

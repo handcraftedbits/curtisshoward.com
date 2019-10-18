@@ -1,0 +1,18 @@
+disableHugoGeneratorInject: true
+disableKinds:
+  - RSS
+enableRobotsTXT: true
+languageCode: "en-us"
+paginate: 10
+params:
+  owner:
+    github: "handcraftedbits"
+    linkedin: "https://linkedin.com/in/curtisshoward"
+    name: "Curtiss Howard"
+    resume: "/resume-cjh-public.pdf"
+permalinks:
+  toplevel: "/:filename/"
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+taxonomies:
+  tag: "tags"

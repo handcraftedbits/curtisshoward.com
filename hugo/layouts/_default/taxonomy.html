@@ -1,0 +1,12 @@
+{{ define "title" }}
+  Posts | {{ .Site.Params.owner.name }}
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "header.page.html" . }}
+    {{ range .Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    {{ partial "pager.html" .Paginator }}
+  {{ partial "footer.page.html" . }}
+{{ end }}

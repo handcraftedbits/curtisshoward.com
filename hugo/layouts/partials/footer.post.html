@@ -1,0 +1,22 @@
+  </section>
+  {{ partial "tags.html" . }}
+
+  {{ if (not .isListing) }}
+    {{ if (or .page.NextInSection .page.PrevInSection) }}
+      <section id="prev-next">
+        {{ if .page.PrevInSection }}
+          <span aria-hidden="true">&lsaquo;&nbsp;</span>
+          <a class="prev" href="{{ .page.PrevInSection.Permalink }}" aria-label="{{ .page.PrevInSection.Title }}">
+            <span>{{ .page.PrevInSection.Title }}</span>
+          </a>
+        {{ end }}
+        {{ if .page.NextInSection }}
+          <a class="next" href="{{ .page.NextInSection.Permalink }}" aria-label="{{ .page.NextInSection.Title }}">
+            <span>{{ .page.NextInSection.Title }}</span>
+          </a>
+          <span aria-hidden="true">&nbsp;&rsaquo;</span>
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ end }}
+</article>

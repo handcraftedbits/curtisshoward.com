@@ -1,0 +1,14 @@
+{{ define "title" }}
+  Posts | {{ .Site.Params.owner.name }}
+{{ end }}
+
+{{ define "body" }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+
+  {{ partial "header.page.html" . }}
+    {{ range $paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    {{ partial "pager.html" $paginator }}
+  {{ partial "footer.page.html" . }}
+{{ end }}

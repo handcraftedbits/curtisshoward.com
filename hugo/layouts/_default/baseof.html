@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <title>{{ block "title" . }}{{ end }}</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+
+    {{ .Site.Data.favicons.tags | safeHTML }}
+    <link rel="stylesheet" type="text/css" href="/{{ .Site.Data.webpack.site.css }}" />
+  </head>
+  <body>
+    {{ block "body" . }}
+    {{ end }}
+    <script src="/{{ .Site.Data.webpack.site.js }}"></script>
+  </body>
+</html>

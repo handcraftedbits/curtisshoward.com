@@ -1,0 +1,27 @@
+{{ define "title" }}
+  {{ .Title }} | {{ .Site.Params.owner.name }}
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "header.page.html" . }}
+    <article class="no-tags">
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <section class="body">
+        {{ $repos := getJSON "https://api.github.com/users/" .Site.Params.owner.github "/repos?sort=full_name" }}
+        {{ range $repos }}
+          {{ if (not .fork) }}
+            <h2>
+              <a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+            </h2>
+            <p>
+              {{ .description }}.
+            </p>
+          {{ end }}
+        {{ end }}
+      </section>
+    </article>
+  {{ partial "footer.page.html" . }}
+{{ end }}
+

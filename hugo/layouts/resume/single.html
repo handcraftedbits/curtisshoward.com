@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <title>{{ .Title }}</title>
+
+    <meta charset="UTF-8" />
+
+    {{ .Site.Data.favicons.tags | safeHTML }}
+    <link rel="stylesheet" type="text/css" href="/{{ .Site.Data.webpack.resume.css }}" />
+  </head>
+  <body>
+    {{ $resume := .Site.Data.resume }}
+
+    <header>
+      <section id="name-and-info">
+        {{ if (isset $resume.basics "picture") }}
+        <svg>
+          <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#{{ $resume.basics.picture }}"></use>
+        </svg>
+        {{ end }}
+        <div id="name-and-title">
+          <h1>{{ $resume.basics.name | default "basics.name" }}</h1>
+          <h2>{{ $resume.basics.label | default "basics.label" }}</h2>
+        </div>
+        <div id="personal-info">
+          <div id="address">
+            <svg>
+              <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#home-icon"></use>
+            </svg>
+            <div>
+              <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                {{ $resume.basics.location.address | default "basics.location.address" | safeHTML }}
+              </p>
+              <p>
+                {{ $resume.basics.location.city | default "basics.location.city" }},
+                {{ $resume.basics.location.postalCode | default "basics.location.postalCode" }}
+              </p>
+            </div>
+          </div>
+          <div id="phone">
+            <svg>
+              <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#phone-icon"></use>
+            </svg>
+            <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+              {{ $resume.basics.phone | default "basics.phone" | safeHTML }}
+            </p>
+          </div>
+          <div id="email">
+            <svg>
+              <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#email-icon"></use>
+            </svg>
+            <p>
+              <a href="mailto:{{ $resume.basics.email }}">{{ $resume.basics.email | default "basics.email" }}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="sites">
+        {{ if (isset $resume.basics "website") }}
+          <div id="homepage">
+            <svg>
+              <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#webpage-icon"></use>
+            </svg>
+            <p>
+              <a href="{{ $resume.basics.website }}">
+                {{ $resume.basics._websitePrettyLink | default $resume.basics.website }}
+              </a>
+            </p>
+          </div>
+        {{ end }}
+        {{ range $i, $profile := $resume.basics.profiles }}
+          <div id="site-{{ $i }}">
+            <svg>
+              <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#{{ $profile._icon }}"></use>
+            </svg>
+            <p>
+              <a href="{{ $profile.url | default (print "basics.profiles[" $i "].url") }}">
+                {{ if (isset $profile "_prettyLink") }}
+                  {{ $profile._prettyLink }}
+                {{ else }}
+                  {{ $profile.url | default (print "basics.profiles[" $i "].url") }}
+                {{ end }}
+              </a>
+            </p>
+          </div>
+        {{ end }}
+      </section>
+    </header>
+    <main>
+      <section id="summary">
+        <h1>{{ $resume._meta.titles.summary | default "Summary" }}</h1>
+        <p>
+          {{ $resume.basics.summary | default "basics.summary" }}
+        </p>
+      </section>
+
+      {{ if (isset $resume "skills") }}
+        <section id="skills">
+          <h1>{{ $resume._meta.titles.skills | default "Skills" }}</h1>
+          <div class="skills-outer-container">
+            {{ range $i, $skill := $resume.skills }}
+              <div class="skills-inner-container">
+                <p>{{ $skill._category | default (print "skills[" $i "]._category") }}</p>
+                <p>{{ $skill._length | default (print "skills[" $i "]._length") }}</p>
+                {{ if (isset $skill "keywords") }}
+                  {{ $length := len $skill.keywords }}
+                  <p>
+                    {{ range $j, $keyword := $skill.keywords }}
+                      {{ $keyword }}{{ if (lt $j (sub $length 1)) }},{{ end }}
+                    {{ end }}
+                  </p>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "other") }}
+        <section id="experience">
+          <h1>{{ $resume._meta.titles.other | default "Other Experience" }}</h1>
+          {{ range $i, $exp := $resume.other }}
+            <div id="other-{{ $i }}" class="item-with-date {{ if (eq $exp._break true) }} pagebreak {{ end }}">
+              <div class="experience">
+                <p>{{ $exp.position | default (print "other[" $i "].position") }}</p>
+                <p>
+                  <a href="{{ $exp.website | default (print "other[" $i "].website") }}">
+                    {{- $exp.company | default (print "other[" $i "].company") -}}
+                  </a>
+                  <span>{{ $exp._location | default (print "other[" $i "]._location") }}</span>
+                </p>
+                <ul>
+                  {{ range $highlight := $exp.highlights }}
+                    <li>{{ $highlight }}</li>
+                  {{ end }}
+                </ul>
+              </div>
+              <div>
+                <p>{{ $exp.startDate | default (print "other[" $i "].startDate") }}&nbsp;-</p>
+                <p>{{ $exp.endDate | default (print "other[" $i "].endDate") }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "work") }}
+        <section id="work">
+          <h1>{{ $resume._meta.titles.work | default "Experience" }}</h1>
+          {{ range $i, $exp := $resume.work }}
+            <div id="work-{{ $i }}" class="item-with-date {{ if (eq $exp._break true) }} pagebreak {{ end }}">
+              <div class="experience">
+                <p>{{ $exp.position | default (print "work[" $i "].position") }}</p>
+                <p>
+                  <a href="{{ $exp.website | default (print "work[" $i "].website") }}">
+                    {{- $exp.company | default (print "work[" $i "].company") -}}
+                  </a>
+                  <span>{{ $exp._location | default (print "work[" $i "]._location") }}</span>
+                </p>
+                <ul>
+                  {{ range $highlight := $exp.highlights }}
+                    {{ if eq $highlight "_break" }}
+                      <li class="pagebreak"></li>
+                    {{ else }}
+                      <li>{{ $highlight }}</li>
+                    {{ end }}
+                  {{ end }}
+                </ul>
+              </div>
+              <div>
+                <p>{{ $exp.startDate | default (print "work[" $i "].startDate") }}&nbsp;-</p>
+                <p>{{ $exp.endDate | default (print "work[" $i "].endDate") }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "education") }}
+        <section id="education">
+          <h1>{{ $resume._meta.titles.education | default "Education" }}</h1>
+          {{ range $i, $education := $resume.education }}
+            <div id="education-{{ $i }}" class="item-with-date {{ if (eq $education._break true) }} pagebreak {{ end }}">
+              <div class="education">
+                <p>
+                  <a href="{{ $education._website | default (print "education[" $i "]._website") }}">
+                    {{- $education.institution | default (print "education[" $i "].institution") -}}
+                  </a>
+                  <span>{{ $education._location | default (print "education[" $i "]._location") }}</span>
+                </p>
+                <p>
+                  {{ $education.studyType | default (print "education[" $i "].studyType") }},
+                  {{ $education.area | default (print "education[" $i "].area") }}
+                  {{ if (isset $education "_honors") }}
+                    <i>{{ $education._honors }}</i>
+                  {{ end }}
+                </p>
+                {{ if (isset $education "gpa") }}
+                  <p>GPA: {{ $education.gpa }}</p>
+                {{ end }}
+              </div>
+              <div>
+                <p>{{ $education.startDate | default (print "education[" $i "].startDate") }}&nbsp;-</p>
+                <p>{{ $education.endDate | default (print "education[" $i "].endDate") }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "_patents") }}
+        <section id="patents">
+          <h1>{{ $resume._meta.titles.patents | default "Patents" }}</h1>
+          <p>
+            {{ $resume._patents.summary | default "_patents.summary" | safeHTML }}
+          </p>
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "publications") }}
+        <section id="publications">
+          <h1>{{ $resume._meta.titles.publications | default "Publications" }}</h1>
+          {{ range $i, $pub := $resume.publications }}
+            <div id="publication-{{ $i }}" class="item-with-date {{ if (eq $pub._break true) }} pagebreak {{ end }}">
+              <div class="publication">
+                <p>
+                  <a href="{{ $pub.website | default (print "_publications[" $i "].website") }}">
+                    <span>{{ $pub.name | default (print "_publications[" $i "].name") }}</span>
+                  </a>
+                </p>
+                <p>{{ $pub.publisher | default (print "_publications[" $i "].publisher") }}</p>
+              </div>
+              <div>
+                <p>{{ $pub.releaseDate | default (print "_publications[" $i "].releaseDate") }}</p>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      {{ end }}
+
+      {{ if (isset $resume "references") }}
+        <section id="references">
+          <h1>{{ $resume._meta.titles.references | default "References" }}</h1>
+          {{ range $i, $ref := $resume.references }}
+            <div id="reference-{{ $i }}" class="item-with-date {{ if (eq $ref._break true) }} pagebreak {{ end }}">
+              <div class="reference">
+                <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                  {{ $ref.name | default (print "references[" $i "].name") | safeHTML }}
+                </p>
+                {{ if (eq $resume._meta.public true) }}
+                  <br />
+                {{ end }}
+                <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                  {{ if isset $ref "_title" }}
+                    {{ $ref._title | safeHTML }}
+                  {{ end }}
+                </p>
+                <p>{{ $ref.reference | default (print "references[" $i "].reference") }}</p>
+              </div>
+              <div class="ref-contact">
+                <div>
+                  <div class="ref-email">
+                    <svg>
+                      <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#email-icon"></use>
+                    </svg>
+                    <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                      {{ $ref._email | default (print "references[" $i "]._email") | safeHTML }}
+                    </p>
+                  </div>
+                  <div class="ref-phone">
+                    <svg>
+                      <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#phone-icon"></use>
+                    </svg>
+                    <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                      {{ $ref._phone | default (print "references[" $i "]._phone") | safeHTML }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      {{ end }}
+    </main>
+
+    <script src="/{{ .Site.Data.webpack.resume.js }}"></script>
+  </body>
+</html>

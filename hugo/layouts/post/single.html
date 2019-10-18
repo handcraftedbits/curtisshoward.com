@@ -1,0 +1,11 @@
+{{ define "title" }}
+  {{ .Title }} | {{ .Site.Params.owner.name }}
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "header.page.html" . }}
+  {{ partial "header.post.html" . }}
+    {{ .Content }}
+  {{ partial "footer.post.html" (dict "page" . "isListing" false) }}
+  {{ partial "footer.page.html" . }}
+{{ end }}

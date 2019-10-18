@@ -1,0 +1,41 @@
+<header class="pure-u-1 pure-u-lg-1-5">
+  <section id="logo-and-name">
+    <a href="/">
+      <svg>
+        <use href="/{{ .Site.Data.webpack.spritemap.svg }}#logo"></use>
+      </svg>
+    </a>
+    <h1>{{ .Site.Params.owner.name }}</h1>
+  </section>
+  <section id="links">
+    <nav role="navigation" id="social" aria-label="Social Links">
+      <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#117;&#114;&#116;&#105;&#115;&#115;&#064;&#099;&#117;&#114;&#116;&#105;&#115;&#115;&#104;&#111;&#119;&#097;&#114;&#100;&#046;&#099;&#111;&#109;" class="fullsize">
+        <svg>
+          <use href="/{{ .Site.Data.webpack.spritemap.svg }}#email-icon"></use>
+        </svg>
+      </a>
+      <a href="{{ .Site.Params.owner.resume }}" target="_blank" rel="noopener noreferrer">
+        <svg>
+          <use href="/{{ .Site.Data.webpack.spritemap.svg }}#resume-icon"></use>
+        </svg>
+      </a>
+      <a href="{{ .Site.Params.owner.linkedin }}" target="_blank" rel="noopener noreferrer">
+        <svg>
+          <use href="/{{ .Site.Data.webpack.spritemap.svg }}#linkedin-icon"></use>
+        </svg>
+      </a>
+      <a href="https://github.com/{{ .Site.Params.owner.github }}" target="_blank" rel="noopener noreferrer">
+        <svg>
+          <use href="/{{ .Site.Data.webpack.spritemap.svg }}#github-icon"></use>
+        </svg>
+      </a>
+    </nav>
+    <nav role="navigation" id="main" aria-label="Pages">
+      <a href='{{ relref . "/about" }}'>About</a>
+      <a href='{{ relref . "/projects" }}'>Projects</a>
+      <a href='{{ relref . "/patents" }}'>Patents</a>
+    </nav>
+  </section>
+</header>
+
+<main class="pure-u-1 pure-u-lg-4-5">

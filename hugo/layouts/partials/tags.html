@@ -1,0 +1,8 @@
+{{ if .page.Params.tags }}
+  <section class='tags {{ if .isListing }} summary {{ end }}'>
+    {{ $context := . }}
+    {{ range sort .page.Params.tags }}
+      <a href='{{ relref $context.page (printf "/tags/%s" .) }}'>{{ . }}</a>
+    {{ end }}
+  </section>
+{{ end }}

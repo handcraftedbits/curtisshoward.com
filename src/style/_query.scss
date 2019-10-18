@@ -1,0 +1,8 @@
+/*
+ * Variables
+ */
+
+$query-desktop: "only screen and (min-width: 64em)";
+$query-phone: "only screen and (max-width: 48em)";
+$query-phone-portrait: "only screen and (max-width: 48em) and (orientation: portrait)";
+$query-tablet: "only screen and (min-width: 48em) and (max-width: 64em)";

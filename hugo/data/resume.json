@@ -1,0 +1,224 @@
+{
+  "basics": {
+    "email": "curtiss@curtisshoward.com",
+    "label": "Software Engineer",
+    "name": "Curtiss Howard",
+    "phone": "(919) 386-9702",
+    "picture": "logo",
+    "summary": "Highly driven and accomplished software engineer with over ten years experience in Java EE technology and middleware development and over two years experience in mobile technology.  Seeking a challenging and rewarding software engineering role.  Recognized as a valuable technical asset with strong problem-solving and communication skills.",
+    "website": "https://curtisshoward.com",
+    "_websitePrettyLink": "curtisshoward.com",
+
+    "location": {
+      "address": "LLL LLLLLLLL LLL LLL",
+      "city": "Cary",
+      "countryCode": "US",
+      "postalCode": "NC 27513",
+      "region": "North Carolina"
+    },
+
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/curtisshoward",
+        "username": "curtisshoward",
+        "_icon": "linkedin-icon",
+        "_prettyLink": "www.linkedin.com/in/curtisshoward"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/handcraftedbits",
+        "username": "handcraftedbits",
+        "_icon": "github-icon",
+        "_prettyLink": "github.com/handcraftedbits"
+      }
+    ]
+  },
+
+  "skills": [
+    {
+      "_category": "Expert Skills",
+      "_length": "6-10+ Years",
+      "keywords": [
+        "Java",
+        "Java EE Middleware",
+        "Agile Development",
+        "Maven",
+        "XML",
+        "CSS",
+        "HTML",
+        "JavaScript",
+        "Servlet",
+        "Eclipse",
+        "IBM WebSphere Application Server"
+      ]
+    },
+    {
+      "_category": "Strengths",
+      "_length": "4+ Years",
+      "keywords": [
+        "JSF",
+        "JSP",
+        "JPA",
+        "JAX-RS",
+        "Spring",
+        "Git",
+        "XML Schema",
+        "Relational Databases (MySQL, PostgreSQL)"
+      ]
+    },
+    {
+      "_category": "Competencies",
+      "_length": "2+ Years",
+      "keywords": [
+        "Identity Management",
+        "OpenAM",
+        "OAuth",
+        "Docker",
+        "AngularJS",
+        "Android Development",
+        "iOS Development"
+      ]
+    }
+  ],
+
+  "work": [
+    {
+      "company": "SAS Institute",
+      "position": "Senior Applications Developer",
+      "_location": "Cary, NC",
+      "website": "https://www.sas.com",
+      "startDate": "2016.03.01",
+      "endDate": "Present",
+      "highlights": [
+        "Currently serving as technical lead for SAS Profile, the identity management solution for SAS Institute.",
+        "Currently designing and developing next-generation identity management platform for SAS Profile.",
+        "Designed and developed numerous SAS Profile RESTFul services to expand Profile usage throughout the company.",
+        "Designed and assisted in initial development of Angular.JS + REST UI for SAS Profile.",
+        "Assisted in several integrations of third-party products with SAS Profile RESTful services.",
+        "Assisted in several third-party Single Sign-On federations with SAS Profile."
+      ],
+      "_break": true
+    },
+    {
+      "company": "SAS Institute",
+      "position": "Applications Developer",
+      "_location": "Cary, NC",
+      "website": "https://www.sas.com",
+      "startDate": "2014.01.01",
+      "endDate": "2016.02.28",
+      "highlights": [
+        "Performed development duties for SAS Profile, the identity management solution for SAS Institute.",
+        "Designed and lead initial development of Level 2 RESTful services for SAS Profile.",
+        "Lead organization-wide effort to adopt Swagger documentation for REST services.",
+        "Assisted in several integrations of third-party products with SAS Profile RESTful services.",
+        "Assisted in several third-party Single Sign-On federations with SAS Profile.",
+        "Lead migration of SAS Profile build from Apache Ant to Apache Maven.",
+        "Lead migration of SAS Profile source control from CVS to Git."
+      ]
+    },
+    {
+      "company": "IBM",
+      "position": "Staff Software Engineer, IBM Watson",
+      "_location": "Durham, NC",
+      "website": "https://www.ibm.com",
+      "startDate": "2013.03.01",
+      "endDate": "2013.12.31",
+      "highlights": [
+        "Designed and lead development of an innovative patient data visualization widget using HTML5 and Dojo.",
+        "Performed web UI development duties for the IBM Watson for Healthcare initiative."
+      ]
+    },
+    {
+      "company": "IBM",
+      "position": "Staff Software Engineer, IBM Worklight",
+      "_location": "Durham, NC",
+      "website": "https://www.ibm.com",
+      "startDate": "2011.11.01",
+      "endDate": "2013.02.28",
+      "highlights": [
+        "Served as IBM Worklight Customer Lab Advocate for Citi and Blue Cross Blue Shield of South Carolina.",
+        "Designed and lead development for the Android implementation of a custom mobile encrypted data store for IBM Worklight 5.0.5.",
+        "Lead development effort to completely replace existing IBM Worklight Hibernate persistence layer with Apache OpenJPA for IBM Worklight 5.0."
+      ]
+    },
+    {
+      "company": "IBM",
+      "position": "Staff Software Engineer, IBM WebSphere Application Server",
+      "_location": "Durham, NC",
+      "website": "https://www.ibm.com",
+      "startDate": "2008.07.01",
+      "endDate": "2011.10.31",
+      "highlights": [
+        "Served as IBM WebSphere Application Server Customer Lab Advocate for Blue Cross Blue Shield of South Carolina.",
+        "Co-designed and co-lead an effort to create an open source JavaServer Faces 2.0 tag library intended to replace IBM's existing JavaServer Faces Widget Library.",
+        "Co-lead and performed primary development duties for an effort to bring JavaServer Faces 2.0 support to IBM WebSphere 8.0 via the open source Apache MyFaces JavaServer Faces implementation.",
+        "Contributed many changes and fixes to the open source Apache MyFaces project and obtained committer rights.",
+        "Performed development duties for the IBM WebSphere Application Server webcontainer, JSP, and JSF teams during the IBM WebSphere Application Server 8.0 release."
+      ],
+      "_break": true
+    },
+    {
+      "company": "IBM",
+      "position": "Software Engineer, IBM WebSphere Application Server",
+      "_location": "Durham, NC",
+      "website": "https://www.ibm.com",
+      "startDate": "2005.05.01",
+      "endDate": "2008.06.30",
+      "highlights": [
+        "Co-designed and lead development on a major Java annotation processing subsystem for IBM WebSphere Application Server 7.0.",
+        "Co-designed and performed development duties for the Remote Request Dispatcher feature for IBM WebSphere Application Server 6.1.",
+        "Performed development duties for the IBM WebSphere Application Server webcontainer, JSP, and JSF teams during the IBM WebSphere Application Server 6.1 and 7.0 releases.",
+        "Performed development duties for the core IBM WebSphere Administrative Console team pertaining to UI and server-side development during the IBM WebSphere Application Server 6.1 and 7.0 releases."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "area": "Computer Science",
+      "endDate": "2005.05.01",
+      "institution": "North Carolina State University",
+      "startDate": "2000.08.01",
+      "studyType": "B.S.",
+      "_honors": "summa cum laude",
+      "_location": "Raleigh, NC",
+      "_website": "https://www.ncsu.edu"
+    }
+  ],
+
+  "publications": [
+    {
+      "name": "Include remote files in your Web application seamlessly with the new Remote Request Dispatcher",
+      "publisher": "IBM developerWorks",
+      "releaseDate": "2006.08.23",
+      "summary": "",
+      "website": "https://web.archive.org/web/20091010050005/http://www.ibm.com:80/developerworks/websphere/techjournal/0608_hesmer/0608_hesmer.html"
+    }
+  ],
+
+  "_patents": {
+    "summary": "Granted twelve United States software patents with others pending.  For a complete list, visit <a href=\"https://curtisshoward.com/patents.html\">https://curtisshoward.com/patents.html</a>."
+  },
+
+  "references": [
+    {
+      "name": "LLLLL LLLLLLL",
+      "reference": "Former manager",
+      "_title": "LLLLLLL L LL LLLLLLLLLLL LLLLLLLL LLLLLLL",
+      "_email": "LLLLLLLLLLLLLLLLLLL",
+      "_phone": "LLLLL LLL-LLLL"
+    },
+    {
+      "name": "LLLLLLL LLLLL",
+      "reference": "Former team lead",
+      "_title": "LLLLLLLL LLLLLLLLLL LLLLLLLLLLLL LLLLLLLLL",
+      "_email": "LLLLLLLLLLLLLLLLL",
+      "_phone": "LLLLL LLL-LLLL"
+    }
+  ],
+
+  "_meta": {
+    "public": true
+  }
+}

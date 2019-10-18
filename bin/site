@@ -1,0 +1,4 @@
+#!/bin/sh
+
+docker run -it --rm --user $(id -u):$(id -g) --cap-add SYS_ADMIN -p 8080:8080 \
+     -v $(pwd):/work handcraftedbits/curtisshoward.com-runner $*

@@ -1,0 +1,17 @@
+{{ define "title" }}
+  {{ .Title }} | {{ .Site.Params.owner.name }}
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "header.page.html" . }}
+    <article class="no-tags">
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+      <section class="body">
+        {{ .Content }}
+      </section>
+    </article>
+  {{ partial "footer.page.html" . }}
+{{ end }}
+

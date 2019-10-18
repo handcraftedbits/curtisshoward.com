@@ -1,0 +1,88 @@
+{{ $paginator := . }}
+
+{{ if (gt $paginator.TotalPages 1) }}
+  <nav role="navigation" id="posts" aria-label="Posts">
+    <ul>
+      {{ if $paginator.HasPrev }}
+      <li>
+        <a href="{{ $paginator.Prev.URL }}" aria-label="Previous page">
+          <span aria-hidden="true">&lsaquo;</span>
+        </a>
+      </li>
+      {{ end }}
+      {{ if (eq $paginator.PageNumber 1) }}
+        <li class="active">
+          <span aria-label="Page 1">1</span>
+        </li>
+      {{ else }}
+        <li>
+          <a href="{{ $paginator.First.URL }}" aria-label="Page 1">
+            <span aria-hidden="true">1</span>
+          </a>
+        </li>
+      {{ end }}
+
+      {{ $context := 2 }}
+      {{ $min := add (mul $context 2) 1 }}
+      {{ $begin := sub $paginator.PageNumber $context }}
+      {{ $end := add $paginator.PageNumber $context }}
+
+      {{ if (ge $begin (sub $paginator.TotalPages $min)) }}
+        {{ $begin := sub $paginator.TotalPages $min }}
+      {{ end }}
+
+      {{ if (le $end (add $min 1)) }}
+        {{ $end := add $min 1 }}
+      {{ end }}
+
+      {{ if (ge $begin (add $context 1)) }}
+        <li class="skip">
+          <span>&hellip;</span>
+        </li>
+      {{ end }}
+
+      {{ range $paginator.Pagers }}
+        {{ $notFirstLast := and (ne .PageNumber 1) (ne .PageNumber .TotalPages) }}
+
+        {{ if (and (and (ge .PageNumber $begin) (le .PageNumber $end)) $notFirstLast) }}
+          {{ if eq . $paginator }}
+            <li class="active">
+              <span aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</span>
+            </li>
+          {{ else }}
+            <li>
+              <a href="{{ .URL }}" aria-label="Page {{ .PageNumber }}">
+                <span aria-hidden="true">{{ .PageNumber }}</span>
+              </a>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ if (le $end (sub $paginator.TotalPages $context)) }}
+        <li class="skip">
+          <span>&hellip;</span>
+        </li>
+      {{ end }}
+
+      {{ if (eq $paginator.PageNumber $paginator.TotalPages) }}
+        <li class="active">
+          <span aria-label="Page {{ $paginator.TotalPages }}">{{ $paginator.TotalPages }}</span>
+        </li>
+      {{ else }}
+        <li>
+          <a href="{{ $paginator.Last.URL }}" aria-label="Page {{ $paginator.TotalPages }}">
+            <span aria-hidden="true">{{ $paginator.TotalPages }}</span>
+          </a>
+        </li>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+      <li>
+        <a href="{{ $paginator.Next.URL }}" aria-label="Next page">
+          <span aria-hidden="true">&rsaquo;</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}
