@@ -202,7 +202,7 @@ li {
      font-family: "BariolSerif";
 }
 
-li > code, p > code {
+li code, p code {
      $size-padding: $size-text / 5;
      $size-text-code: $size-text * 0.8;
 
