@@ -1,7 +1,7 @@
 ---
 date: 2019-10-18T21:38:40-04:00
 tags: [ ansible, kubernetes ]
-title: "Multi-document YAML Files and the Ansible k8s Module"
+title: Multi-document YAML Files and the Ansible k8s Module
 ---
 
 I've been using [Ansible](https://www.ansible.com) to provision a [Kubernetes](https://kubernetes.io) cluster and I've
