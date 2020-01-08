@@ -15,12 +15,12 @@ async function saveToPDF (url, filename) {
      process.stdout.write ("saving URL " + url + " to PDF file " + filename + "... ");
 
      try {
-          // Using settings described here:
-          // https://github.com/GoogleChrome/puppeteer/blod/master/docs/troubleshooting.md#running-on-alpine.
+          // Disabling the sandbox isn't a great idea, but it does make things easier and we know exactly which page
+          // we're going to access.
 
           const browser = await puppeteer.launch({
-               args: [ "--disable-dev-shm-usage", "--no-sandbox" ],
-               executablePath: "/usr/bin/chromium-browser",
+               args: [ "--disable-setuid-sandbox", "--no-sandbox" ],
+               executablePath: "/usr/bin/google-chrome",
                headless: true
           });
           const page = await browser.newPage();

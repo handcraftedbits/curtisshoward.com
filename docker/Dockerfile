@@ -1,9 +1,9 @@
-FROM golang:alpine as build
+FROM golang as build
 
-ARG VERSION_HUGO=0.58.3
+ARG VERSION_HUGO=0.62.2
 
-RUN apk update
-RUN apk add git
+RUN apt-get update
+RUN apt-get install -y git
 
 RUN cd /tmp && \
   git clone https://github.com/gohugoio/hugo.git && \
@@ -11,26 +11,24 @@ RUN cd /tmp && \
   git checkout v${VERSION_HUGO} && \
   go install
 
-FROM alpine:edge
+FROM node:current-slim
+
+RUN apt-get update
+
+RUN apt-get install -y fonts-liberation
+RUN cd /tmp && \
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+  apt-get install -y ./google-chrome-stable_current_amd64.deb && \
+  rm *.deb
+RUN apt-get update
 
 COPY --from=build /go/bin/hugo /usr/local/bin
 
-RUN apk update
-RUN apk add ca-certificates chromium freetype freetype-dev harfbuzz nodejs ttf-freefont yarn
-
-RUN addgroup -S pptruser && \
-  adduser -S -g pptruser pptruser && \
-  mkdir -p /home/pptruser/Downloads && \
-  chown -R pptruser:pptruser /home/pptruser
-
-ENV HOME /tmp
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 EXPOSE 8080
 
 VOLUME /work
 WORKDIR /work
-
-USER pptruser
 
 ENTRYPOINT ["yarn"]
