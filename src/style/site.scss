@@ -157,10 +157,6 @@ body {
                padding: $size-padding-default;
           }
 
-          @media #{$query-tablet} {
-               padding: $size-padding-default * $size-multiplier-tablet;
-          }
-
           @media #{$query-desktop} {
                bottom: 0;
                position: fixed;
