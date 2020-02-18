@@ -37,6 +37,7 @@
     "build:hugo": "hugo -d ../dist --minify -s ./hugo",
     "build:webpack": "webpack --config webpack.production.js --mode production",
     "clean": "rimraf {dist,hugo/{data/{favicons.yaml,webpack.json},resources}}",
+    "hugo": "hugo -s ./hugo",
     "pdf-render": "node src/pdf-render -d dist -o dist/resume-cjh-public.pdf -u /resume/index.html",
     "postbuild": "yarn pdf-render -r dist/{resume,resume-*.{css,js}}",
     "prebuild": "yarn install && yarn clean",
