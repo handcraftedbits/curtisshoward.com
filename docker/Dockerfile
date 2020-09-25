@@ -1,6 +1,6 @@
 FROM golang as build
 
-ARG VERSION_HUGO=0.62.2
+ARG VERSION_HUGO=0.75.1
 
 RUN apt-get update
 RUN apt-get install -y git
