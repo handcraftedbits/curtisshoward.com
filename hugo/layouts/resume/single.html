@@ -62,7 +62,7 @@
               <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#webpage-icon"></use>
             </svg>
             <p>
-              <a href="{{ $resume.basics.website }}">
+              <a href="{{ $resume.basics.website }}" target="_blank">
                 {{ $resume.basics._websitePrettyLink | default $resume.basics.website }}
               </a>
             </p>
@@ -74,7 +74,7 @@
               <use href="/{{ $.Site.Data.webpack.spritemap.svg }}#{{ $profile._icon }}"></use>
             </svg>
             <p>
-              <a href="{{ $profile.url | default (print "basics.profiles[" $i "].url") }}">
+              <a href="{{ $profile.url | default (print "basics.profiles[" $i "].url") }}" target="_blank">
                 {{ if (isset $profile "_prettyLink") }}
                   {{ $profile._prettyLink }}
                 {{ else }}
@@ -101,14 +101,13 @@
             {{ range $i, $skill := $resume.skills }}
               <div class="skills-inner-container">
                 <p>{{ $skill._category | default (print "skills[" $i "]._category") }}</p>
-                <p>{{ $skill._length | default (print "skills[" $i "]._length") }}</p>
                 {{ if (isset $skill "keywords") }}
                   {{ $length := len $skill.keywords }}
-                  <p>
+                  <div>
                     {{ range $j, $keyword := $skill.keywords }}
-                      {{ $keyword }}{{ if (lt $j (sub $length 1)) }},{{ end }}
+                      <div>{{ $keyword }}</div>
                     {{ end }}
-                  </p>
+                  </div>
                 {{ end }}
               </div>
             {{ end }}
@@ -124,7 +123,7 @@
               <div class="experience">
                 <p>{{ $exp.position | default (print "other[" $i "].position") }}</p>
                 <p>
-                  <a href="{{ $exp.website | default (print "other[" $i "].website") }}">
+                  <a href="{{ $exp.website | default (print "other[" $i "].website") }}" target="_blank">
                     {{- $exp.company | default (print "other[" $i "].company") -}}
                   </a>
                   <span>{{ $exp._location | default (print "other[" $i "]._location") }}</span>
@@ -152,7 +151,7 @@
               <div class="experience">
                 <p>{{ $exp.position | default (print "work[" $i "].position") }}</p>
                 <p>
-                  <a href="{{ $exp.website | default (print "work[" $i "].website") }}">
+                  <a href="{{ $exp.website | default (print "work[" $i "].website") }}" target="_blank">
                     {{- $exp.company | default (print "work[" $i "].company") -}}
                   </a>
                   <span>{{ $exp._location | default (print "work[" $i "]._location") }}</span>
@@ -183,7 +182,7 @@
             <div id="education-{{ $i }}" class="item-with-date {{ if (eq $education._break true) }} pagebreak {{ end }}">
               <div class="education">
                 <p>
-                  <a href="{{ $education._website | default (print "education[" $i "]._website") }}">
+                  <a href="{{ $education._website | default (print "education[" $i "]._website") }}" target="_blank">
                     {{- $education.institution | default (print "education[" $i "].institution") -}}
                   </a>
                   <span>{{ $education._location | default (print "education[" $i "]._location") }}</span>
@@ -224,7 +223,7 @@
             <div id="publication-{{ $i }}" class="item-with-date {{ if (eq $pub._break true) }} pagebreak {{ end }}">
               <div class="publication">
                 <p>
-                  <a href="{{ $pub.website | default (print "_publications[" $i "].website") }}">
+                  <a href="{{ $pub.website | default (print "_publications[" $i "].website") }}" target="_blank">
                     <span>{{ $pub.name | default (print "_publications[" $i "].name") }}</span>
                   </a>
                 </p>
@@ -242,9 +241,9 @@
         <section id="references">
           <h1>{{ $resume._meta.titles.references | default "References" }}</h1>
           {{ range $i, $ref := $resume.references }}
-            <div id="reference-{{ $i }}" class="item-with-date {{ if (eq $ref._break true) }} pagebreak {{ end }}">
+            <!--div id="reference-{{ $i }}" class="item-with-date {{ if (eq $ref._break true) }} pagebreak {{ end }}">
               <div class="reference">
-                <p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
+                <!p {{ if (eq $resume._meta.public true) }} class="redacted" {{ end }}>
                   {{ $ref.name | default (print "references[" $i "].name") | safeHTML }}
                 </p>
                 {{ if (eq $resume._meta.public true) }}
@@ -277,8 +276,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div-->
           {{ end }}
+          <p>Available upon request.</p>
         </section>
       {{ end }}
     </main>

@@ -203,7 +203,7 @@ div {
 
      &.skills-inner-container {
           border-right: 2px solid $color-text;
-          flex-basis: 100%;
+          flex-basis: 37.5%;
           padding-left: $size-padding-default;
           padding-right: $size-padding-default;
           text-align: center;
@@ -213,35 +213,40 @@ div {
                padding-right: 0;
           }
 
-          & > p:first-child {
-               cursor: default;
-               font-weight: bold;
-               padding-bottom: $size-padding-default / 3;
-               user-select: none;
-          }
-
-          & > p:nth-child(2) {
+          & > p {
                border-bottom: 2px solid $color-text;
                cursor: default;
                display: inline-block;
-               font-style: italic;
-               padding-bottom: $size-padding-default * 1.1;
+               font-weight: bold;
+               padding-bottom: $size-padding-default * 0.8;
                user-select: none;
                white-space: nowrap;
-               width: 50%;
-
-               &:after {
-                    content: ")";
-               }
-
-               &:before {
-                    content: "(";
-               }
+               width: 46.667%;
           }
 
-          & > p:last-child {
+          & > div {
                font-family: $font-family-default;
+               font-size: $size-base * 1.1;
                padding-top: $size-padding-default * 1.1;
+          }
+
+          & > div > div {
+               font-weight: 500;
+               padding-bottom: $size-padding-default * 0.2;
+               padding-top: $size-padding-default * 0.2;
+          }
+
+          & > div > div:nth-child(odd) {
+               background-color: #EEEEEE;
+               border-radius: $size-base / 3;
+          }
+     }
+
+     &.skills-inner-container:last-child {
+          flex-basis: 25%;
+
+          & > p {
+               width: 70%;
           }
      }
 
