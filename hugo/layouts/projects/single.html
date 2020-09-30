@@ -10,7 +10,19 @@
       </header>
       <section class="body">
         {{ $repos := getJSON "https://api.github.com/users/" .Site.Params.owner.github "/repos?sort=full_name" }}
+        {{ $repos2 := getJSON "https://api.github.com/users/" .Site.Params.owner.github "/repos?page=2&sort=full_name" }}
         {{ range $repos }}
+          {{ if (not .fork) }}
+            <h2>
+              <a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+            </h2>
+            <p>
+              {{ .description }}.
+            </p>
+          {{ end }}
+        {{ end }}
+        <!-- Pretty ugly but there isn't a great way to do this... -->
+        {{ range $repos2 }}
           {{ if (not .fork) }}
             <h2>
               <a href="{{ .html_url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
