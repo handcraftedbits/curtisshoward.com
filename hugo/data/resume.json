@@ -80,18 +80,29 @@
 
   "work": [
     {
+      "company": "Analyst1",
+      "position": "Senior Software Engineer",
+      "_location": "Remote",
+      "website": "https://analyst1.com",
+      "startDate": "2020/11/09",
+      "endDate": "Present",
+      "highlights": [
+        "Currently serving as a developer for Analyst1."
+      ]
+    },
+    {
       "company": "SAS Institute",
       "position": "Senior Applications Developer, Digital Commerce",
       "_location": "Cary, NC",
       "website": "https://www.sas.com",
       "startDate": "2019/10/13",
-      "endDate": "Present",
+      "endDate": "2020/11/06",
       "highlights": [
-        "Currently serving as a developer for SAS Institute's digital commerce platform.",
+        "Served as a developer for SAS Institute's digital commerce platform.",
         "Designed and developed RESTful services in support of digital commerce initiatives.",
+        "_break",
         "Assisted in designing a model for deployment of internal SAS applications on Kubernetes."
-      ],
-      "_break": true
+      ]
     },
     {
       "company": "SAS Institute",
@@ -148,7 +159,8 @@
         "Served as IBM Worklight Customer Lab Advocate for Citi and Blue Cross Blue Shield of South Carolina.",
         "Designed and lead development for the Android implementation of a custom mobile encrypted data store for IBM Worklight 5.0.5.",
         "Lead development effort to completely replace existing IBM Worklight Hibernate persistence layer with Apache OpenJPA for IBM Worklight 5.0."
-      ]
+      ],
+      "_break": true
     },
     {
       "company": "IBM",
@@ -159,7 +171,6 @@
       "endDate": "2011/10/31",
       "highlights": [
         "Served as IBM WebSphere Application Server Customer Lab Advocate for Blue Cross Blue Shield of South Carolina.",
-        "_break",
         "Assigned in design and development of an open source JSF 2.0 tag library intended to replace IBM's existing JSF Widget Library.",
         "Performed primary development duties for an effort to bring JSF 2.0 support to IBM WebSphere 8.0 via the open source Apache MyFaces JSF implementation.",
         "Contributed many changes and fixes to the open source Apache MyFaces project and obtained committer rights.",
@@ -208,23 +219,6 @@
   "_patents": {
     "summary": "Granted twelve United States software patents with others pending.  For a complete list, visit <a href=\"https://curtisshoward.com/patents\">https://curtisshoward.com/patents</a>."
   },
-
-  "references": [
-    {
-      "name": "LLLLL LLLLLLL",
-      "reference": "Former manager",
-      "_title": "LLLLLLL L LL LLLLLLLLLLL LLLLLLLL LLLLLLL",
-      "_email": "LLLLLLLLLLLLLLLLLLL",
-      "_phone": "LLLLL LLL-LLLL"
-    },
-    {
-      "name": "LLLLLLL LLLLL",
-      "reference": "Former team lead",
-      "_title": "LLLLLLLL LLLLLLLLLL LLLLLLLLLLLL LLLLLLLLL",
-      "_email": "LLLLLLLLLLLLLLLLL",
-      "_phone": "LLLLL LLL-LLLL"
-    }
-  ],
 
   "_meta": {
     "public": true,
